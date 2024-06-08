@@ -1,0 +1,25 @@
+[build-system]
+requires = ['setuptools', 'setuptools-scm']
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools.packages.find]
+include = ['geopedestrian']
+
+[project]
+name = 'geopedestrian'
+version = '0.1a'
+description = 'Determines which locations are reachable by a pedestrian.'
+readme = 'README.md'
+requires-python = '>=3.7'
+keywords = ['geospatial', 'intelligence', 'urban', 'digital twin', 'walking', 'routing']
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+]
+dependencies = ['georapid']
+
+[project.urls]
+'Homepage' = 'https://geospatial-ai.de'
+'GitHub' = 'https://github.com/Geospatial-AI-DE/geopedestrian-py'
+'Documentation' = 'https://geopedestrian.readthedocs.io/en/latest'
