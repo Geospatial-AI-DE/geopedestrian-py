@@ -16,11 +16,16 @@
 # Mono auto generated files
 mono_crash.*
 
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
 # Build results
+[Bb]uild/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+*.egg-info/
 x64/
 x86/
 [Ww][Ii][Nn]32/
