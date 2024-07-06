@@ -1,5 +1,9 @@
+# author: Jan Tschada
+# SPDX-License-Identifer: Apache-2.0
+
 import json
 import os
+
 
 
 class CategoryRegistry(object):
