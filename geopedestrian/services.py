@@ -40,7 +40,7 @@ def drive_from(client: GeoRapidClient, latitude: float, longitude: float, catego
 
     return response.json()
 
-def solve_walking(client: GeoRapidClient, latitude: float, longitude: float):
+def solve_walking(client: GeoRapidClient, latitude: float, longitude: float, break_values: List[int]=[5, 10, 15]):
     """
     Solves walking areas representing areas which are accessible by a pedestrian.
 
@@ -50,6 +50,8 @@ def solve_walking(client: GeoRapidClient, latitude: float, longitude: float):
     :type latitude: float
     :param longitude: The longitude representing the current pedestrian location.
     :type longitude: float
+    :param break_values: The break values for each walking area in minutes.
+    :type break_values: List[int]
 
     :return: The calculated walking areas as GeoJSON.
     """
@@ -65,6 +67,20 @@ def solve_walking(client: GeoRapidClient, latitude: float, longitude: float):
         'lat': latitude,
         'lon': longitude
     }
+    if break_values:
+        if 50 < len(break_values):
+            raise ValueError(f'Invalid break values! Not more than 50 break values are supported.')
+
+        for break_value in break_values:
+            if not isinstance(break_value, int):
+                raise ValueError(f'Invalid break value! {break_value} is not a valid integer.')
+            elif break_value < 1 or 300 < break_value:
+                raise ValueError(f'Invalid break value! {break_value} is not in the range of [1, 300].')
+        
+        if 0 < len(break_values):
+            break_values.sort()
+            params['breaks'] = ','.join([str(break_value) for break_value in break_values])
+
     response = requests.request('GET', endpoint, headers=client.auth_headers, params=params)
     response.raise_for_status()
 
