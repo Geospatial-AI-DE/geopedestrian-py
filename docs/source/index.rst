@@ -41,5 +41,4 @@ Contents
 .. toctree::
 
    usage
-   guides
    api
