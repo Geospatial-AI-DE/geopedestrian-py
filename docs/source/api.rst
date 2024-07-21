@@ -1,0 +1,6 @@
+API
+===
+
+.. toctree::
+   services
+   categories
