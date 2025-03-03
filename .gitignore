@@ -23,6 +23,7 @@ mono_crash.*
 [Bb]uild/
 [Dd]ebug/
 [Dd]ebugPublic/
+[Dd]ist/
 [Rr]elease/
 [Rr]eleases/
 *.egg-info/
