@@ -40,6 +40,40 @@ def drive_from(client: GeoRapidClient, latitude: float, longitude: float, catego
 
     return response.json()
 
+def analyze_walking(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
+    """
+    Analyzes walking to categorized places which are accessible by a pedestrian.
+    The analysis result is a 150 meter spatial grid where each cell contains at least one place.
+
+    :param client: The client instance to use for this query.
+    :type client: :class:`georapid.client.GeoRapidClient`
+    :param latitude: The latitude representing the current pedestrian location.
+    :type latitude: float
+    :param longitude: The longitude representing the current pedestrian location.
+    :type longitude: float
+    :param category_id: The defined category.
+    :type category_id: int
+
+    :return: The walking analysis spatial grid cells as GeoJSON.
+    """
+
+    if latitude < -90.0 or 90.0 < latitude:
+        raise ValueError(f'Invalid latitude value! {latitude} is not in the range of [-90.0, 90.0].')
+    
+    if longitude < -180.0 or 180.0 < longitude:
+        raise ValueError(f'Invalid longitude value! {longitude} is not in the range of [-180.0, 180.0].')
+    
+    endpoint = '{0}/analyze_walking'.format(client.url)
+    params = {
+        'lat': latitude,
+        'lon': longitude,
+        'category': category_id
+    }
+    response = requests.request('GET', endpoint, headers=client.auth_headers, params=params)
+    response.raise_for_status()
+
+    return response.json()  
+
 def solve_walking(client: GeoRapidClient, latitude: float, longitude: float, break_values: List[int]=[5, 10, 15]):
     """
     Solves walking areas representing areas which are accessible by a pedestrian.
@@ -99,7 +133,7 @@ def walk_from(client: GeoRapidClient, latitude: float, longitude: float, categor
     :param category_id: The defined category.
     :type category_id: int
 
-    :return: The places which can reach the pedestrian with walking areas as GeoJSON.
+    :return: The places which can reach the pedestrian with walking routes as GeoJSON.
     """
 
     if latitude < -90.0 or 90.0 < latitude:
@@ -132,7 +166,7 @@ def walk_to(client: GeoRapidClient, latitude: float, longitude: float, category_
     :param category_id: The defined category.
     :type category_id: int
 
-    :return: The accessible places with walking areas as GeoJSON.
+    :return: The accessible places with walking routes as GeoJSON.
     """
 
     if latitude < -90.0 or 90.0 < latitude:

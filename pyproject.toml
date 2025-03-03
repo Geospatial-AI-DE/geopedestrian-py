@@ -7,7 +7,7 @@ include = ['geopedestrian']
 
 [project]
 name = 'geopedestrian'
-version = '0.1'
+version = '0.2b'
 description = 'Determines which locations are reachable by a pedestrian.'
 readme = 'README.md'
 requires-python = '>=3.7'
