@@ -42,7 +42,7 @@ def drive_from(client: GeoRapidClient, latitude: float, longitude: float, catego
 
 def analyze_walking(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
     """
-    Analyzes walking to categorized places which are accessible by a pedestrian.
+    Analyzes walking to categorized places which are accessible by a pedestrian in 15 minutes.
     The analysis result is a 150 meter spatial grid where each cell contains at least one place.
 
     :param client: The client instance to use for this query.
