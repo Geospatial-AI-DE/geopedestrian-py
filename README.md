@@ -40,13 +40,22 @@ To create a 15-minute city, urban planners need to address a variety of place ca
 
 ![](assets/images/Fifteen%20Minutes%20Walking%20Areas%20-%20Paris.png)
 
-*Walking areas 5, 10, and 15 minutes for a pedestrian starting at the center in Paris, France.*
+*Walking areas of 5, 10, and 15 minutes for a pedestrian starting at the center in Paris, France.*
 
-We want to analyse walking to museums nearby in about 15 minutes.
+We want to analyze walking to nearby museums within about 15 minutes. 
+Every museum within the 15-minute walking area is a potential candidate. 
+The analysis result is a 150-meter spatial grid where each cell contains at least one museum.
+
+![](assets/images/Fifteen%20Minutes%20Walking%20Grid%20-%20Paris.png)
+
+*Spatial grid showing areas containing museums that are accessible within about 15 minutes starting at the center in Paris, France.*
+
+A more realistic scenario involves treating the museums as facilities and calculating every possible route. 
+The result narrows down the museums being accessible by following the solved routes.
 
 ![](assets/images/Fifteen%20Minutes%20Walking%20Places%20-%20Paris.png)
 
-*Museums being accesible in about 15 minutes starting at the center in Paris, France.*
+*Museums being accesible within about 15 minutes starting at the center in Paris, France.*
 
 ![](assets/images/Fifteen%20Minutes%20Walking%20Routes%20-%20Paris.png)
 
