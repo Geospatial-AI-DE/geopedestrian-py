@@ -34,3 +34,29 @@ Please, check out the [RapidAPI Account Creation and Management Guide](https://d
 
 Start with the [Usage](https://geopedestrian.readthedocs.io/en/latest/usage.html) section for further information, including
 how to install the Python module.
+
+## 15 Minutes Walking Scenario
+To create a 15-minute city, urban planners need to address a variety of place categories to ensure that all essential services and amenities are within easy reach.
+
+![](assets/images/Fifteen%20Minutes%20Walking%20Areas%20-%20Paris.png)
+
+*Walking areas 5, 10, and 15 minutes for a pedestrian starting at the center in Paris, France.*
+
+We want to analyse walking to museums nearby in about 15 minutes.
+
+![](assets/images/Fifteen%20Minutes%20Walking%20Places%20-%20Paris.png)
+
+*Museums being accesible in about 15 minutes starting at the center in Paris, France.*
+
+![](assets/images/Fifteen%20Minutes%20Walking%20Routes%20-%20Paris.png)
+
+*Walking routes to museums for a pedestrian starting at the center in Paris, France.*
+
+| name | total_minutes | total_kilometers |
+-------|---------------|------------------|
+| Fondation Henri Cartier-Bresson | 2 | 0.1 |
+| Passage de Retz | 4 | 0.4 |
+| Musée de la Chasse et de la Nature  | 5 | 0.4 |
+| Musée Picasso | 7 | 0.5 |
+| Musée de l'Histoire de France | 7 | 0.6 |
+
