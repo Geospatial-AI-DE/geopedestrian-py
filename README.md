@@ -37,12 +37,12 @@ how to install the Python module.
 
 ## 15 Minutes Walking Scenario
 To create a 15-minute city, urban planners need to address a variety of place categories to ensure that all essential services and amenities are within easy reach.
+We want to analyze walking to nearby museums within about 15 minutes.
 
 ![](assets/images/Fifteen%20Minutes%20Walking%20Areas%20-%20Paris.png)
 
 *Walking areas of 5, 10, and 15 minutes for a pedestrian starting at the center in Paris, France.*
 
-We want to analyze walking to nearby museums within about 15 minutes. 
 Every museum within the 15-minute walking area is a potential candidate. 
 The analysis result is a 150-meter spatial grid where each cell contains at least one museum.
 
