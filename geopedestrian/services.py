@@ -7,7 +7,7 @@ from typing import List
 
 
 
-def drive_from(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
+def drive_from(client: GeoRapidClient, latitude: float, longitude: float, category_id: str):
     """
     Drive from categorized places which are accessible by car to the pedestrian location.
 
@@ -18,7 +18,7 @@ def drive_from(client: GeoRapidClient, latitude: float, longitude: float, catego
     :param longitude: The longitude representing the current pedestrian location.
     :type longitude: float
     :param category_id: The defined category.
-    :type category_id: int
+    :type category_id: str
 
     :return: The places which can reach the pedestrian with driving areas as GeoJSON.
     """
@@ -40,7 +40,7 @@ def drive_from(client: GeoRapidClient, latitude: float, longitude: float, catego
 
     return response.json()
 
-def analyze_walking(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
+def analyze_walking(client: GeoRapidClient, latitude: float, longitude: float, category_id: str):
     """
     Analyzes walking to categorized places which are accessible by a pedestrian in 15 minutes.
     The analysis result is a 150 meter spatial grid where each cell contains at least one place.
@@ -52,7 +52,7 @@ def analyze_walking(client: GeoRapidClient, latitude: float, longitude: float, c
     :param longitude: The longitude representing the current pedestrian location.
     :type longitude: float
     :param category_id: The defined category.
-    :type category_id: int
+    :type category_id: str
 
     :return: The walking analysis spatial grid cells as GeoJSON.
     """
@@ -120,7 +120,7 @@ def solve_walking(client: GeoRapidClient, latitude: float, longitude: float, bre
 
     return response.json()
 
-def walk_from(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
+def walk_from(client: GeoRapidClient, latitude: float, longitude: float, category_id: str):
     """
     Walk from categorized places which are accessible to the pedestrian location.
 
@@ -131,7 +131,7 @@ def walk_from(client: GeoRapidClient, latitude: float, longitude: float, categor
     :param longitude: The longitude representing the current pedestrian location.
     :type longitude: float
     :param category_id: The defined category.
-    :type category_id: int
+    :type category_id: str
 
     :return: The places which can reach the pedestrian with walking routes as GeoJSON.
     """
@@ -153,7 +153,7 @@ def walk_from(client: GeoRapidClient, latitude: float, longitude: float, categor
 
     return response.json()
 
-def walk_to(client: GeoRapidClient, latitude: float, longitude: float, category_id: int):
+def walk_to(client: GeoRapidClient, latitude: float, longitude: float, category_id: str):
     """
     Walk to categorized places which are accessible by a pedestrian.
 
@@ -164,7 +164,7 @@ def walk_to(client: GeoRapidClient, latitude: float, longitude: float, category_
     :param longitude: The longitude representing the current pedestrian location.
     :type longitude: float
     :param category_id: The defined category.
-    :type category_id: int
+    :type category_id: str
 
     :return: The accessible places with walking routes as GeoJSON.
     """

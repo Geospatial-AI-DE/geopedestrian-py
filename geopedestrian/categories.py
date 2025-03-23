@@ -24,10 +24,10 @@ class CategoryRegistry(object):
     """
 
     def __init__(self) -> None:
-        with open(os.path.join(os.path.dirname(__file__), 'data', 'places-categories.json'), mode='r', encoding='utf-8') as in_stream:
+        with open(os.path.join(os.path.dirname(__file__), 'data', 'places-categories-2025.json'), mode='r', encoding='utf-8') as in_stream:
             self._categories = json.load(in_stream)
 
-    def find_id(self, name: str):
+    def find_id(self, name: str) -> str:
         """
         Finds the corresponding category ID.
 
@@ -45,6 +45,6 @@ class CategoryRegistry(object):
             category_id = category['categoryId']
             for full_label in full_labels:
                 if name == full_label:
-                    return int(category_id)
+                    return category_id
                 
         return None
