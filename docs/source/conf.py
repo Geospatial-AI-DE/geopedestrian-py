@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'geopedestrian'
-copyright = '2024, Geospatial AI'
+copyright = '2025, Geospatial AI'
 author = 'Jan Tschada'
 
 release = '0.3'
