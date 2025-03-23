@@ -6,8 +6,8 @@ project = 'geopedestrian'
 copyright = '2024, Geospatial AI'
 author = 'Jan Tschada'
 
-release = '0.1'
-version = '0.1'
+release = '0.3'
+version = '0.3'
 
 # -- General configuration
 
